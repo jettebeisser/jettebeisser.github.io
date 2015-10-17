@@ -2034,6 +2034,10 @@
 				white-space: nowrap;
 			}
 
+			.image.thumb.download:after {
+				content: 'Download';
+			}
+
 			.image.thumb:hover:after {
 				opacity: 1.0;
 			}
@@ -2463,9 +2467,9 @@
 /* Header */
 
 	#header {
-		background-color: #1f1815;
+		background-color: #323438;
 		background-attachment: scroll,								fixed;
-		background-image: url("images/overlay.png"), url("../../images/bg2.jpg");
+		background-image: url("images/overlay.png"), url("../../images/bg3.jpg");
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
 		background-size: auto,								auto 100%;

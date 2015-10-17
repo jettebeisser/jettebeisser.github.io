@@ -105,11 +105,11 @@
 						overlayOpacity: 0.85,
 						popupCloserText: '',
 						popupLoaderText: '',
-						selector: '.work-item a.image',
+						selector: '.work-item a.preview',
 						usePopupCaption: true,
 						usePopupDefaultStyling: false,
 						usePopupEasyClose: false,
-						usePopupNav: true,
+						usePopupNav: false,
 						windowMargin: (skel.breakpoint('small').active ? 0 : 50)
 					});
 
