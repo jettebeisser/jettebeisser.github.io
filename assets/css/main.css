@@ -1748,7 +1748,7 @@
 /* Form */
 
 	form {
-		margin: 0 0 2em 0;
+		/*margin: 0 0 2em 0;*/
 	}
 
 	label {
@@ -2155,6 +2155,7 @@
 			cursor: default;
 			list-style: none;
 			padding-left: 0;
+			margin: 2em 0 2em 0;
 		}
 
 			ul.actions li {
