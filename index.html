@@ -5,6 +5,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<head>
 		<title>Hi, I am Jette</title>
 		<meta charset="utf-8" />
@@ -37,11 +38,33 @@
 					</section>
 				
 				<section id="one">
-					<a href="#two"><h2>Work</h2></a> <a href="#three"><h2>University</h2></a> <a href="#four"><h2>Hackathons</h2></a>
+					<script>
+					$(document).ready(function(){
+						$("#h_work").click(function(){
+        						$("#two").slideToggle("fast");
+   						 });
+					});
+					</script>
+					<script>
+					$(document).ready(function(){
+						$("#h_university").click(function(){
+        						$("#three").slideToggle("fast");
+   						 });
+					});
+					</script>
+					
+					<div id="h_work"><h2>Work</h2></div> 
+					<div id="h_university"><h2>University</h2></div>
+					<a href="#four"><div id="h_hackathons"><h2>Hackathons</h2></div></a>
 					</section>
+				
 
 				<!-- Two -->
 					<section id="two" class="withPreview">
+						<style> #two{
+						display: none;
+						}
+						</style>
 						<h2>Work</h2>
 						<div class="row">
 							<article class="6u 12u$(xsmall) work-item">
@@ -98,6 +121,10 @@
 				</section>
 					
 				<section id="three" class="withPreview">
+						<style> #three{
+						display: none;
+						}
+						</style>
 						<h2>University</h2>
 						<div class="row">
 							<article class="6u 12u$(xsmall) work-item">
