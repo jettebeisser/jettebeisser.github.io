@@ -13,6 +13,24 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<style> 
+#two, #three, #four {
+	display: none;
+}
+		</style>
+		<script>
+$(document).ready(function(){
+	$("#h_work").click(function(){
+        	$("#two").slideToggle("fast");
+   	});
+	$("#h_university").click(function(){
+        	$("#three").slideToggle("fast");
+   	});
+	$("#h_hackathons").click(function(){
+        	$("#four").slideToggle("fast");
+   	});
+});
+		</script>
 	</head>
 	<body id="top">
 
@@ -37,35 +55,10 @@
 						</ul> -->
 					</section>
 				
-				<section id="one">
-					<script>
-					$(document).ready(function(){
-						$("#h_work").click(function(){
-        						$("#two").slideToggle("fast");
-   						 });
-					});
-					</script>
-					<script>
-					$(document).ready(function(){
-						$("#h_university").click(function(){
-        						$("#three").slideToggle("fast");
-   						 });
-					});
-					</script>
-					
-					<div id="h_work"><h2>Work</h2></div> 
-					<div id="h_university"><h2>University</h2></div>
-					<a href="#four"><div id="h_hackathons"><h2>Hackathons</h2></div></a>
-					</section>
-				
 
 				<!-- Two -->
+					<div id="h_work"><h2>Work</h2></div>
 					<section id="two" class="withPreview">
-						<style> #two{
-						display: none;
-						}
-						</style>
-						<h2>Work</h2>
 						<div class="row">
 							<article class="6u 12u$(xsmall) work-item">
 								<a href="//speakerdeck.com/player/34e3c52cf5244cd4ab16cc9b3edbff65?" data-poptrox="iframe,800x600" class="image fit thumb preview"><img src="images/thumbs/MAPrep.jpeg" alt="" /></a>
@@ -119,13 +112,9 @@
 					
 				<!-- Three -->
 				</section>
-					
+					 
+				<div id="h_university"><h2>University</h2></div>
 				<section id="three" class="withPreview">
-						<style> #three{
-						display: none;
-						}
-						</style>
-						<h2>University</h2>
 						<div class="row">
 							<article class="6u 12u$(xsmall) work-item">
 								<a href="//speakerdeck.com/player/34e3c52cf5244cd4ab16cc9b3edbff65?" data-poptrox="iframe,800x600" class="image fit thumb preview"><img src="images/thumbs/MAPrep.jpeg" alt="" /></a>
@@ -179,9 +168,8 @@
 					
 				<!-- Four -->
 				</section>
-				
+				<div id="h_hackathons"><h2>Hackathons</h2></div>
 				<section id="four" class="withPreview">
-						<h2>Hackathons</h2>
 						<div class="row">
 							<article class="6u 12u$(xsmall) work-item">
 								<a href="//speakerdeck.com/player/34e3c52cf5244cd4ab16cc9b3edbff65?" data-poptrox="iframe,800x600" class="image fit thumb preview"><img src="images/thumbs/MAPrep.jpeg" alt="" /></a>
