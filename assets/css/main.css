@@ -2459,7 +2459,7 @@
 			margin: 0 0 0.5em 0;
 		}
 
-		.work-item p {
+		.work-item p, .work-item ul {
 			font-size: 0.8em;
 			line-height: 1.5em;
 			margin: 0;
