@@ -50,6 +50,14 @@ ul.labeled-icons li {
     border-bottom: dotted 1px;
 }
 
+.accordion-indicator { 
+    transition: transform ease-in-out .3s;
+}
+.accordion-active {
+    transform: rotate(90deg);
+    transition: transform ease-in-out .3s;
+}
+
 @media screen and (max-width: 480px) {
     ul.actions {
         margin: .75em 0 2em 0;

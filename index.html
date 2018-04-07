@@ -39,6 +39,7 @@
 $(document).ready(function(){
 	$("#h_work").click(function(){
         	$("#two").slideToggle("fast");
+          $("#h_work .accordion-indicator").toggleClass("accordion-active")
    	});
 	$("#h_university").click(function(){
         	$("#three").slideToggle("fast");
@@ -74,7 +75,9 @@ $(document).ready(function(){
 				
 
 				<!-- Two -->
-					<div id="h_work"><h2 class="pointer">&#x2b Work</h2></div>
+					<div id="h_work">
+            <h2 class="pointer">Work<span class="glyphicon glyphicon-chevron-right accordion-indicator"></span></h2>
+          </div>
 					<section id="two" class="withPreview">
 						<div class="row">
 							<article class="6u 12u$(xsmall) work-item">
