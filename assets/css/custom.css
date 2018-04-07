@@ -33,3 +33,9 @@
 ol.carousel-indicators {
     margin-bottom: 0;
 }
+
+@media screen and (max-width: 480px) {
+    ul.actions {
+        margin: .75em 0 2em 0;
+    }
+}
