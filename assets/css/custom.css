@@ -51,11 +51,19 @@ ul.labeled-icons li {
 }
 
 .accordion-indicator { 
+    float: right;
+    opacity: .6;
     transition: transform ease-in-out .3s;
+    transform: rotate(0deg);
 }
+
 .accordion-active {
     transform: rotate(90deg);
     transition: transform ease-in-out .3s;
+}
+
+h2.pointer:hover {
+    color: #49bf9d !important;
 }
 
 @media screen and (max-width: 480px) {

@@ -43,9 +43,11 @@ $(document).ready(function(){
    	});
 	$("#h_university").click(function(){
         	$("#three").slideToggle("fast");
+          $("#h_university .accordion-indicator").toggleClass("accordion-active")
    	});
 	$("#h_hackathons").click(function(){
         	$("#four").slideToggle("fast");
+          $("#h_hackathons .accordion-indicator").toggleClass("accordion-active")
    	});
 });
 		</script>
@@ -130,7 +132,7 @@ $(document).ready(function(){
 									</ul>
 							</article>
 							<article class="6u 12u$(xsmall) work-item">
-								<a href="https://www.lbs.de/bausparen/index.jsp" class="image fit thumb preview"><img src="images/thumbs/LBS.png" alt="" /></a>
+								<a href="https://www.lbs.de/bausparen/index.jsp" target="_blank" class="image fit thumb"><img src="images/thumbs/LBS.png" alt="" /></a>
 								<h3>User Research: Website Usability Tests for German Landesbausparkasse (public sector home savings and loan institution)</h3>
 								<p>The German Landesbausparkasse launched a campaign to give its customers an easy option to inform themselves about core aspects of home loans and other saving options.
 								</br>The key features of the  
@@ -198,7 +200,7 @@ $(document).ready(function(){
 				<!-- Three -->
 				</section>
 					 
-				<div id="h_university"><h2 class="pointer">&#x2b University</h2></div>
+				<div id="h_university"><h2 class="pointer">University<span class="glyphicon glyphicon-chevron-right accordion-indicator"></span></h2></div>
 				<section id="three" class="withPreview">
 						<div class="row">
 							<article class="6u 12u$(xsmall) work-item">
@@ -425,7 +427,7 @@ $(document).ready(function(){
 					
 				<!-- Four -->
 				</section>
-				<div id="h_hackathons"><h2 class="pointer">&#x2b Hackathons</h2></div>
+				<div id="h_hackathons"><h2 class="pointer">Hackathons<span class="glyphicon glyphicon-chevron-right accordion-indicator"></span></h2></div>
 				<section id="four" class="withPreview">
 						<div class="row">
 							<article class="6u 12u$(xsmall) work-item">
