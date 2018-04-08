@@ -1,3 +1,8 @@
+.work-item ul li {
+    padding-left: 0.5em;
+    margin-left: 2em;
+}
+
 .carousel-indicators li {
     display: inline-block;
     width: 10px;
