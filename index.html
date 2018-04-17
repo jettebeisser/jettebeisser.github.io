@@ -42,6 +42,8 @@
 		</style>
 		<script>
 $(document).ready(function(){
+  var lastScrollTop = null;
+
 	$("#h_ur").click(function(){
         	$("#two").slideToggle("fast");
           $("#h_ur .accordion-indicator").toggleClass("accordion-active")
@@ -58,10 +60,33 @@ $(document).ready(function(){
         	$("#five").slideToggle("fast");
           $("#h_presentations .accordion-indicator").toggleClass("accordion-active")
    	});
-   	$("#h_about").click(function(){
-        	$("#six").slideToggle("fast");
-          $("#h_about .accordion-indicator").toggleClass("accordion-active")
-   	});
+ 	$("#h_about").click(function(){
+      	$("#six").slideToggle("fast");
+        $("#h_about .accordion-indicator").toggleClass("accordion-active")
+ 	});
+
+  const toDetailsView = (event) => {
+    const workItem = event.target.id.split('-').pop();
+    lastScrollTop = $(window).scrollTop();
+    window.location.hash = workItem;
+    $(".dynamic-content-section, .dynamic-content-section + section").hide();
+    $("section#zero").append(
+      $(`section#details-${workItem}`).children()
+    );
+  }
+
+  const fromDetailsView = (event) => {
+    const urlParts = event.oldURL.split('#');
+    if(urlParts.length != 1) {
+      const workItem = urlParts[1];
+      $(`section#details-${workItem}`).append($("section#zero").children())
+      $(".dynamic-content-section, .dynamic-content-section + section").show();
+      $(window).scrollTop(lastScrollTop);
+    }
+  }
+
+  $(".learnMoreBtn").click(toDetailsView);
+  window.onhashchange = fromDetailsView;
 });
 		</script>
 	</head>
@@ -75,9 +100,11 @@ $(document).ready(function(){
 
 		<!-- Main -->
 			<div id="main">
+          <section id="zero">
+          </section>
 
 				<!-- One -->
-					<section id="one">
+					<section id="one" class="dynamic-content-section">
  						<header class="major">
 							<h2>Portfolio </h2>
 						</header>
@@ -92,29 +119,39 @@ $(document).ready(function(){
 				
 
 				<!-- Two -->
-					<div id="h_ur">
+					<div id="h_ur" class="dynamic-content-section">
             <h2 class="pointer">User Research<span class="glyphicon glyphicon-chevron-right accordion-indicator"></span></h2>
           </div>
 					<section id="two" class="withPreview">
-						
 						<div  class="row">
-						<article class="6u 12u$(xsmall) work-item">
-								<a href="https://www.lbs.de/bausparen/index.jsp" target="_blank" class="image fit thumb"><img src="images/thumbs/LBS.png" alt="" /></a>
-								<h3>Website Usability Tests for German Landesbausparkasse (public sector home savings and loan institution)</h3>
-								<p>The German Landesbausparkasse launched a campaign to give its customers an easy option to inform themselves about core aspects of home loans and other saving options.
-								</br>The key features of the  
-									<a href="https://www.lbs.de/bausparen/index.jsp" target="_blank">website</a> tested included an instantaneous calculation of various rate, saving and timing options.</p>
-									<p>&nbsp;</p>
-								<p>Utilized methods included:</p>
-								
-									<ul>
- 										<li>on-site usability test</li>
-										<li>semi-structured interview</li>
-										<li>concurrent think-aloud</li>
-  										<li>storytelling</li>
-										<li>backlog grooming/prioritizing and assigning action items</li>
-									</ul>
-							</article>
+
+  						<article class="6u 12u$(xsmall) work-item">
+  							<a href="https://www.lbs.de/bausparen/index.jsp" target="_blank" class="image fit thumb"><img src="images/thumbs/LBS.png" alt="" /></a>
+  							<h3>Website Usability Tests for German Landesbausparkasse (public sector home savings and loan institution)</h3>
+  							<p>The German Landesbausparkasse launched a campaign to give its customers an easy option to inform themselves about core aspects of home loans and other saving options.
+  							</br>The key features of the  
+  								<a href="https://www.lbs.de/bausparen/index.jsp" target="_blank">website</a> tested included an instantaneous calculation of various rate, saving and timing options.</p>
+  								<p>&nbsp;</p>
+  							<p>Utilized methods included:</p>
+  							
+  							<ul>
+  								<li>on-site usability test</li>
+  								<li>semi-structured interview</li>
+  								<li>concurrent think-aloud</li>
+  								<li>storytelling</li>
+  								<li>backlog grooming/prioritizing and assigning action items</li>
+  							</ul>
+                <!-- <button id="more-ur1" class="button learnMoreBtn">Learn More</button> -->
+  						</article>
+
+              <section id="details-ur1" class="details-view-content">
+                <header class="major">
+                  <h2>Detail View</h2>
+                </header>
+                
+                <p>Some random stuff.</br>
+
+              </section>
 							
 							<article class="6u 12u$(xsmall) work-item">
 								<div> 
@@ -246,7 +283,9 @@ $(document).ready(function(){
 				<!-- Three -->
 				</section>
 					 
-				<div id="h_strategy"><h2 class="pointer">Product Development and Strategic Re-Orientation<span class="glyphicon glyphicon-chevron-right accordion-indicator"></span></h2></div>
+				<div id="h_strategy" class="dynamic-content-section">
+          <h2 class="pointer">Product Development and Strategic Re-Orientation<span class="glyphicon glyphicon-chevron-right accordion-indicator"></span></h2>
+        </div>
 				<section id="three" class="withPreview">
 						<div  class="row">
 						
@@ -422,7 +461,9 @@ $(document).ready(function(){
 					
 				<!-- Four -->
 				</section>
-				<div id="h_hackathons"><h2 class="pointer">Hackathons<span class="glyphicon glyphicon-chevron-right accordion-indicator"></span></h2></div>
+				<div id="h_hackathons" class="dynamic-content-section">
+          <h2 class="pointer">Hackathons<span class="glyphicon glyphicon-chevron-right accordion-indicator"></span></h2>
+        </div>
 				<section id="four" class="withPreview">
 						<div  class="row">
 						<article class="6u 12u$(xsmall) work-item">
@@ -644,17 +685,19 @@ $(document).ready(function(){
 							<li><a href="#" class="button">Full Portfolio</a></li>
 						</ul> -->
 </section>
-				
+
 				<!-- Six -->
-				<div id="h_about"><h2 class="pointer">About me<span class="glyphicon glyphicon-chevron-right accordion-indicator"></span></h2>
-					<section id="six">
+				<div id="h_about" class="dynamic-content-section">
+          <h2 class="pointer">About me<span class="glyphicon glyphicon-chevron-right accordion-indicator"></span></h2>
+        </div>
+				<section id="six">
 					<p>Being completely oblivious to the terms <i>Usability</i> and <i>User Experience</i>, I was introduced to the concept of engineering psychology at the Humboldt-Universität zu Berlin. The idea of improving software products and facilitating the everyday lives of people in an increasingly digitalized world grew on me and left me wanting to learn more about Human-Computer Interaction.
 						</br>A few years later, with a B.Sc. in Psychology and an M.Sc. in the interdisciplinary Human Factors program at the Technische Universität Berlin, I benefit from a deep theoretical understanding of all (or at least a lot of) things related to cognitive ergonomics.</p> 
 
 						<p>Focusing on B2C projects, I have developed a strong love for the actual end users requirements, desires, and needs. As a psychologist I know, that the objective should not just be to enhance a product's efficacy and effectiveness. It is crucial to also provide the user with the most intuitive, stimulating and engaging UX possible.
 
 						</br>Other than the Usability and User Experience of software products, I am very interested in the methodology of Design Thinking. Thanks to a very industry-faced Master of Science program I had the chance to enhance my practical skills in those fields through application-oriented student projects for real-life clients. In addition to working on multiple research projects on mobile and web products for clients in Germany and the US, I gained experience in coaching Design Thinkers and showcasing the immense value of Usability and User Research deep-dives as a User Researcher at D-LABS GmbH, Potsdam, Germany.</p>
-					</section>
+				</section>
 				<!-- Seven -->
 				<div id="h_getintouch"><h2>Get in Touch</h2></div>
 					<section id="seven">

@@ -127,3 +127,10 @@ h2.pointer:hover {
         margin: .75em 0 2em 0;
     }
 }
+
+
+/* Details View */
+
+.details-view-content {
+    display: none;
+}
