@@ -73,6 +73,7 @@ $(document).ready(function(){
     $("section#zero").append(
       $(`section#details-${workItem}`).children()
     );
+    $(window).scrollTop(0);
   }
 
   const fromDetailsView = (event) => {
