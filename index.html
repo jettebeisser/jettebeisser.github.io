@@ -45,24 +45,31 @@ $(document).ready(function(){
   var lastScrollTop = null;
 
 	$("#h_ur").click(function(){
-        	$("#two").slideToggle("fast");
-          $("#h_ur .accordion-indicator").toggleClass("accordion-active")
+      	$("#two").slideToggle("fast");
+        $("#h_ur .accordion-indicator").toggleClass("accordion-active")
+        $("#two").toggleClass("section-active")
    	});
 	$("#h_strategy").click(function(){
-        	$("#three").slideToggle("fast");
-          $("#h_strategy .accordion-indicator").toggleClass("accordion-active")
+      	$("#three").slideToggle("fast");
+        $("#h_strategy .accordion-indicator").toggleClass("accordion-active")
+        $("#three").toggleClass("section-active")
    	});
 	$("#h_hackathons").click(function(){
-        	$("#four").slideToggle("fast");
-          $("#h_hackathons .accordion-indicator").toggleClass("accordion-active")
+      	$("#four").slideToggle("fast");
+        $("#h_hackathons .accordion-indicator").toggleClass("accordion-active")
+        $("#four").toggleClass("section-active")
+
    	});
 	$("#h_presentations").click(function(){
-        	$("#five").slideToggle("fast");
-          $("#h_presentations .accordion-indicator").toggleClass("accordion-active")
+      	$("#five").slideToggle("fast");
+        $("#h_presentations .accordion-indicator").toggleClass("accordion-active")
+        $("#five").toggleClass("section-active")
+
    	});
  	$("#h_about").click(function(){
       	$("#six").slideToggle("fast");
         $("#h_about .accordion-indicator").toggleClass("accordion-active")
+        $("#six").toggleClass("section-active")
  	});
 
   const toDetailsView = (event) => {
@@ -81,7 +88,8 @@ $(document).ready(function(){
     if(urlParts.length != 1) {
       const workItem = urlParts[1];
       $(`section#details-${workItem}`).append($("section#zero").children())
-      $(".dynamic-content-section, .dynamic-content-section + section").show();
+      $(".dynamic-content-section").show();
+      $(".dynamic-content-section + section.section-active").show()
       $(window).scrollTop(lastScrollTop);
     }
   }
