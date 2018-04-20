@@ -1,3 +1,32 @@
+.pic-right img, .pic-left img {
+    width: 100%;
+}
+
+.pic-right{
+    display: block;
+    float: right; 
+    width: 60%; 
+    height: 60%; 
+    text-align: center; 
+    padding-bottom: 2em; 
+    padding-left: 2em;
+    font-size: 0.8em;
+    color: #afafae;
+    
+}
+
+.pic-left{
+    display: block;
+    float: left; 
+    width: 60%; 
+    height: 60%; 
+    text-align: center; 
+    padding-bottom: 2em; 
+    padding-right: 2em;
+    font-size: 0.8em;
+    color: #afafae;
+}
+
 p {
     margin: 0 0 2em 0;
     text-align: justify;
